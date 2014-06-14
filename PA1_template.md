@@ -1,6 +1,6 @@
 Markdown for Reproducible Research - Assignment 1
 =================================================
-
+ 
 This markdown is for the assignment 1 for the Course Reproducible Research as part of Data Science
 
 Loading and preprocessing the data
@@ -94,7 +94,7 @@ zid[order(zid$zi, decreasing = TRUE), ][1, 2]
 ```
 
 
-Imputing missing values
+Inputing missing values
 -----------------------
 
 Pre-processing for missing values
