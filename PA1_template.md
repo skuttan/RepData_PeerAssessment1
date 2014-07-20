@@ -42,7 +42,7 @@ What is mean total number of steps taken per day?
 
 
 ```r
-hist(z)
+hist(z, xlab = "Total number of steps each day", main = "Steps per day")
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
@@ -74,7 +74,7 @@ What is the average daily activity pattern?
 
 ```r
 zi <- tapply(y$steps, y$interval, mean)
-plot(unique(y$interval), zi, type = "l")
+plot(unique(y$interval), zi, type = "l", xlab = "5 min Interval", ylab = "Avg steps across all days")
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
@@ -144,7 +144,7 @@ ynew <- rbind(y, xna)
 
 
 ```r
-hist(tapply(ynew$steps, ynew$date, sum))
+hist(tapply(ynew$steps, ynew$date, sum), xlab = "Steps")
 ```
 
 ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
@@ -220,7 +220,7 @@ colnames(meanfin)[3] = "Interval"
 
 library(lattice)
 xyplot(meanfin$"Number of Steps" ~ meanfin$Interval | meanfin$daytype, data = meanfin, 
-    layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of Steps")
+    layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of Steps ")
 ```
 
 ![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17.png) 

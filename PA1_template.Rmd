@@ -37,7 +37,7 @@ What is mean total number of steps taken per day?
 1.  Histogram of the total number of steps taken each day (without NAs)
 
 ```{r}
-hist(z)
+hist(z, xlab = "Total number of steps each day", main = "Steps per day")
 ```
 2.  Calculate and report the mean and median total number of steps taken per day
 Mean - total numnber of steps taken per day
@@ -53,7 +53,7 @@ What is the average daily activity pattern?
 1.  Time series plot of 5 minute interval
 ```{r}
 zi <- tapply(y$steps,y$interval,mean)
-plot(unique(y$interval),zi,type="l")
+plot(unique(y$interval),zi,type="l",xlab="5 min Interval", ylab="Avg steps across all days")
 ```
 2.  Max number of steps for the average across 5 minute intervals.
 ```{r}
@@ -100,7 +100,7 @@ ynew <- rbind(y,xna)
 4.  Hist, mean and median of new data set
 
 ```{r}
-hist(tapply(ynew$steps,ynew$date,sum))
+hist(tapply(ynew$steps,ynew$date,sum),xlab="Steps")
 ```
 
 Mean of the new data set per day
@@ -155,7 +155,7 @@ colnames(meanfin)[3] = "Interval"
 ```{r}
 
 library(lattice)
-xyplot(meanfin$"Number of Steps" ~ meanfin$"Interval" | meanfin$"daytype", data=meanfin,layout=c(1,2), type="l", xlab="Interval",ylab="Number of Steps")
+xyplot(meanfin$"Number of Steps" ~ meanfin$"Interval" | meanfin$"daytype", data=meanfin,layout=c(1,2), type="l", xlab="Interval",ylab="Number of Steps ")
 
 
 ```
